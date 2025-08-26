@@ -7,4 +7,5 @@
 export enum EntityNames {
   Admin_Tools = "Admin Tools",
   Video_Screen = "Video Screen",
+  umbrellaTrigger = "umbrellaTrigger",
 } 

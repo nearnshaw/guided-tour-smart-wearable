@@ -131,6 +131,27 @@
             },
             "parent": 0
           }
+        },
+        "515": {
+          "json": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "w": 1
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            },
+            "parent": 0
+          }
         }
       }
     },
@@ -162,6 +183,12 @@
             "networkId": 0,
             "entityId": 8003
           }
+        },
+        "515": {
+          "json": {
+            "networkId": 0,
+            "entityId": 8004
+          }
         }
       }
     },
@@ -180,6 +207,16 @@
           }
         },
         "512": {
+          "json": {
+            "states": []
+          }
+        },
+        "513": {
+          "json": {
+            "states": []
+          }
+        },
+        "515": {
           "json": {
             "states": []
           }
@@ -222,7 +259,7 @@
                   "tex": {
                     "$case": "videoTexture",
                     "videoTexture": {
-                      "videoPlayerEntity": 0
+                      "videoPlayerEntity": 513
                     }
                   }
                 }
@@ -295,6 +332,11 @@
           "json": {
             "value": "Video Screen"
           }
+        },
+        "515": {
+          "json": {
+            "value": "umbrellaTrigger"
+          }
         }
       }
     },
@@ -326,6 +368,15 @@
           "json": {
             "componentIds": [
               1043
+            ]
+          }
+        },
+        "515": {
+          "json": {
+            "componentIds": [
+              1020,
+              1042,
+              1
             ]
           }
         }
@@ -377,7 +428,7 @@
         "serializationType": "map"
       },
       "data": {
-        "0": {
+        "512": {
           "json": {
             "gizmo": 0
           }
@@ -715,23 +766,19 @@
             "thumbnail": "assets/scene/glasses.png",
             "ageRating": "T",
             "categories": [],
-            "author": "",
-            "email": "",
             "tags": [],
             "layout": {
+              "base": {
+                "x": 0,
+                "y": 0
+              },
               "parcels": [
                 {
                   "x": 0,
                   "y": 0
                 }
-              ],
-              "base": {
-                "x": 0,
-                "y": 0
-              }
+              ]
             },
-            "silenceVoiceChat": false,
-            "disablePortableExperiences": false,
             "skyboxConfig": {
               "fixedTime": 43200
             },
@@ -787,7 +834,8 @@
                 "open": true,
                 "children": [
                   512,
-                  513
+                  513,
+                  515
                 ]
               },
               {
@@ -804,6 +852,10 @@
               },
               {
                 "entity": 513,
+                "children": []
+              },
+              {
+                "entity": 515,
                 "children": []
               }
             ]
@@ -1031,6 +1083,76 @@
       }
     },
     {
+      "name": "asset-packs::Actions",
+      "jsonSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "serializationType": "int32"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "serializationType": "utf8-string"
+                },
+                "type": {
+                  "type": "string",
+                  "serializationType": "utf8-string"
+                },
+                "jsonPayload": {
+                  "type": "string",
+                  "serializationType": "utf8-string"
+                },
+                "allowedInBasicView": {
+                  "type": "boolean",
+                  "serializationType": "optional",
+                  "optionalJsonSchema": {
+                    "type": "boolean",
+                    "serializationType": "boolean"
+                  }
+                },
+                "basicViewId": {
+                  "type": "string",
+                  "serializationType": "optional",
+                  "optionalJsonSchema": {
+                    "type": "string",
+                    "serializationType": "utf8-string"
+                  }
+                }
+              },
+              "serializationType": "map"
+            },
+            "serializationType": "array"
+          }
+        },
+        "serializationType": "map"
+      },
+      "data": {
+        "515": {
+          "json": {
+            "id": 1,
+            "value": [
+              {
+                "name": "Activate Umbrella",
+                "type": "play_sound",
+                "jsonPayload": "{\"src\":\"assets/scene/cardPickup.mp3\"}"
+              },
+              {
+                "name": "Deactivate Umbrella",
+                "type": "play_sound",
+                "jsonPayload": "{\"src\":\"assets/scene/cardPickup.mp3\"}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
       "name": "asset-packs::Counter",
       "jsonSchema": {
         "type": "object",
@@ -1050,7 +1172,7 @@
         "0": {
           "json": {
             "id": 0,
-            "value": 0
+            "value": 1
           }
         }
       }
@@ -1348,7 +1470,13 @@
             "smartItemsControl": {
               "isEnabled": true,
               "linkAllSmartItems": false,
-              "smartItems": []
+              "smartItems": [
+                {
+                  "entity": 515,
+                  "customName": "Umbrella Trigger",
+                  "defaultAction": "Activate Umbrella"
+                }
+              ]
             },
             "rewardsControl": {
               "isEnabled": true,
@@ -1379,6 +1507,9 @@
           "json": {}
         },
         "513": {
+          "json": {}
+        },
+        "515": {
           "json": {}
         }
       }
