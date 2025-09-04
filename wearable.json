@@ -25,7 +25,7 @@
 		],
 		"category": "eyewear"
 	},
-	"name": "Portal Gun",
-	"description": "A gun that teleports you to a portal.",
-	"rarity": "mythic"
+	"name": "Guided Tour Glasses",
+	"description": "A pair of glasses that allow you to see the guided tour.",
+	"rarity": "uncommon"
 }
