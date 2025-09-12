@@ -2,8 +2,8 @@
   "ecs7": true,
   "runtimeVersion": "7",
   "display": {
-    "title": "Guided tour",
-    "description": "Shoot wormholes to teleport anywhere. Press E to switch the portal color. Only works on SDK7 scenes.",
+    "title": "Guided tour CONES",
+    "description": "Draw cones to follow the tour's path.",
     "navmapThumbnail": "assets/scene/glasses.png"
   },
   "scene": {
@@ -22,34 +22,39 @@
     "email": ""
   },
   "tags": [],
-  "spawnPoints": [{
-    "name": "spawn1",
-    "default": true,
-    "position": {
-      "x": [
-        0,
-        3
-      ],
-      "y": [
-        0,
-        0
-      ],
-      "z": [
-        0,
-        3
-      ]
-    },
-    "cameraTarget": {
-      "x": 8,
-      "y": 1,
-      "z": 8
+  "spawnPoints": [
+    {
+      "name": "spawn1",
+      "default": true,
+      "position": {
+        "x": [
+          0,
+          3
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          0,
+          3
+        ]
+      },
+      "cameraTarget": {
+        "x": 8,
+        "y": 1,
+        "z": 8
+      }
     }
-  }],
+  ],
   "featureToggles": {
+    "voiceChat": "enabled",
+    "portableExperiences": "enabled"
   },
   "source": {
     "origin": "creator-hub",
     "projectId": "8bc6aa66-5eeb-4421-ad05-93d6b849bebe"
   },
-  "rating": "T"
+  "rating": "T",
+  "skyboxConfig": {}
 }

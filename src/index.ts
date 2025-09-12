@@ -9,7 +9,9 @@ export function main() {
 
 	addScreen()
 
+	addUmbrella()
 
+	engine.addSystem(createConeSpawnerSystem())
 
 	const umbrellaTrigger = engine.getEntityOrNullByName(EntityNames.umbrellaTrigger)
 
@@ -26,8 +28,51 @@ export function main() {
 		})
 	}
 
+	engine.addSystem(createConeSpawnerSystem())
 
 
+}
+
+
+function createConeSpawnerSystem() {
+	let elapsedSeconds = 0
+	let lastSpawnPosition: Vector3 | null = null
+
+	return (dt: number) => {
+		elapsedSeconds += dt
+		if (elapsedSeconds < 5) {
+			return
+		}
+		// Check every 5 seconds
+		elapsedSeconds = 0
+
+		const playerTransform = Transform.getOrNull(engine.PlayerEntity)
+		if (!playerTransform) {
+			return
+		}
+
+		const currentPos = playerTransform.position
+		const hasMovedEnough = !lastSpawnPosition || Vector3.distance(currentPos, lastSpawnPosition) > 3
+
+		if (hasMovedEnough) {
+			spawnConstructionCone(currentPos)
+			lastSpawnPosition = { x: currentPos.x, y: currentPos.y, z: currentPos.z }
+		}
+	}
+}
+
+function spawnConstructionCone(position: Vector3) {
+	const cone = engine.addEntity()
+	Transform.create(cone, {
+		position: { x: position.x, y: position.y, z: position.z },
+		rotation: Quaternion.fromEulerDegrees(0, 0, 0),
+		scale: { x: 1, y: 1, z: 1 }
+	})
+	GltfContainer.create(cone, {
+		src: "assets/asset-packs/construction_cone/ConstructionCone_01/ConstructionCone_01.glb",
+		visibleMeshesCollisionMask: ColliderLayer.CL_NONE,
+		invisibleMeshesCollisionMask: ColliderLayer.CL_NONE
+	})
 }
 
 

@@ -1,7 +1,7 @@
 {
-  "name": "dcl-project",
+  "name": "Smart glasses CONES",
   "version": "1.0.0",
-  "description": "SDK7 Template scene",
+  "description": "SDK7 SmartGlass scene",
   "scripts": {
     "start": "sdk-commands start",
     "deploy": "sdk-commands deploy",
@@ -11,8 +11,8 @@
     "pack": "sdk-commands pack-smart-wearable"
   },
   "devDependencies": {
-    "@dcl/js-runtime": "7.10.1",
-    "@dcl/sdk": "latest"
+    "@dcl/js-runtime": "7.10.2",
+    "@dcl/sdk": "7.10.2"
   },
   "engines": {
     "node": ">=16.0.0",

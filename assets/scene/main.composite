@@ -132,6 +132,27 @@
             "parent": 0
           }
         },
+        "514": {
+          "json": {
+            "position": {
+              "x": 11.5,
+              "y": 0,
+              "z": 6.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "w": 1
+            },
+            "scale": {
+              "x": 20,
+              "y": 40,
+              "z": 40
+            },
+            "parent": 0
+          }
+        },
         "515": {
           "json": {
             "position": {
@@ -149,6 +170,48 @@
               "y": 0,
               "z": 0,
               "w": 1
+            },
+            "parent": 0
+          }
+        },
+        "516": {
+          "json": {
+            "position": {
+              "x": 0.75,
+              "y": 0,
+              "z": 3.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "w": 1
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            },
+            "parent": 0
+          }
+        },
+        "517": {
+          "json": {
+            "position": {
+              "x": 1,
+              "y": 0,
+              "z": 1.75
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0,
+              "w": 1
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
             },
             "parent": 0
           }
@@ -216,7 +279,22 @@
             "states": []
           }
         },
+        "514": {
+          "json": {
+            "states": []
+          }
+        },
         "515": {
+          "json": {
+            "states": []
+          }
+        },
+        "516": {
+          "json": {
+            "states": []
+          }
+        },
+        "517": {
           "json": {
             "states": []
           }
@@ -237,6 +315,27 @@
             "src": "assets/asset-packs/admin_tools/admin_toolkit.glb",
             "visibleMeshesCollisionMask": 1,
             "invisibleMeshesCollisionMask": 0
+          }
+        },
+        "514": {
+          "json": {
+            "src": "assets/asset-packs/umbrella/Umbrella.glb",
+            "visibleMeshesCollisionMask": 0,
+            "invisibleMeshesCollisionMask": 3
+          }
+        },
+        "516": {
+          "json": {
+            "src": "assets/asset-packs/construction_cone/ConstructionCone_01/ConstructionCone_01.glb",
+            "visibleMeshesCollisionMask": 0,
+            "invisibleMeshesCollisionMask": 3
+          }
+        },
+        "517": {
+          "json": {
+            "src": "assets/asset-packs/construction_cone/ConstructionCone_01/ConstructionCone_01.glb",
+            "visibleMeshesCollisionMask": 0,
+            "invisibleMeshesCollisionMask": 3
           }
         }
       }
@@ -259,7 +358,35 @@
                   "tex": {
                     "$case": "videoTexture",
                     "videoTexture": {
-                      "videoPlayerEntity": 513
+                      "videoPlayerEntity": 513,
+                      "wrapMode": 0,
+                      "filterMode": 0
+                    }
+                  }
+                },
+                "alphaTest": 0.5,
+                "castShadows": true,
+                "diffuseColor": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "alphaTexture": {
+                  "tex": {
+                    "$case": "texture",
+                    "texture": {
+                      "src": "",
+                      "wrapMode": 0,
+                      "filterMode": 0,
+                      "offset": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "tiling": {
+                        "x": 1,
+                        "y": 1
+                      }
                     }
                   }
                 }
@@ -333,9 +460,24 @@
             "value": "Video Screen"
           }
         },
+        "514": {
+          "json": {
+            "value": "Umbrella"
+          }
+        },
         "515": {
           "json": {
             "value": "umbrellaTrigger"
+          }
+        },
+        "516": {
+          "json": {
+            "value": "Construction Cone"
+          }
+        },
+        "517": {
+          "json": {
+            "value": "Construction Cone_2"
           }
         }
       }
@@ -394,7 +536,8 @@
         "513": {
           "json": {
             "src": "https://player.vimeo.com/external/552481870.m3u8?s=c312c8533f97e808fccc92b0510b085c8122a875",
-            "playing": true
+            "playing": true,
+            "volume": 1
           }
         }
       }
@@ -428,7 +571,7 @@
         "serializationType": "map"
       },
       "data": {
-        "0": {
+        "516": {
           "json": {
             "gizmo": 0
           }
@@ -761,32 +904,59 @@
       "data": {
         "0": {
           "json": {
-            "name": "Guided tour smart wearable",
+            "name": "Guided tour",
             "description": "Shoot wormholes to teleport anywhere. Press E to switch the portal color. Only works on SDK7 scenes.",
             "thumbnail": "assets/scene/glasses.png",
             "ageRating": "T",
             "categories": [],
-            "author": "",
-            "email": "",
             "tags": [],
             "layout": {
+              "base": {
+                "x": 0,
+                "y": 0
+              },
               "parcels": [
                 {
                   "x": 0,
                   "y": 0
                 }
-              ],
-              "base": {
-                "x": 0,
-                "y": 0
+              ]
+            },
+            "skyboxConfig": {},
+            "spawnPoints": [
+              {
+                "name": "spawn1",
+                "default": true,
+                "position": {
+                  "x": {
+                    "$case": "range",
+                    "value": [
+                      0,
+                      3
+                    ]
+                  },
+                  "y": {
+                    "$case": "range",
+                    "value": [
+                      0,
+                      0
+                    ]
+                  },
+                  "z": {
+                    "$case": "range",
+                    "value": [
+                      0,
+                      3
+                    ]
+                  }
+                },
+                "cameraTarget": {
+                  "x": 8,
+                  "y": 1,
+                  "z": 8
+                }
               }
-            },
-            "silenceVoiceChat": false,
-            "disablePortableExperiences": false,
-            "skyboxConfig": {
-              "fixedTime": 43200
-            },
-            "spawnPoints": []
+            ]
           }
         }
       }
@@ -839,7 +1009,10 @@
                 "children": [
                   512,
                   513,
-                  515
+                  515,
+                  514,
+                  516,
+                  517
                 ]
               },
               {
@@ -860,6 +1033,18 @@
               },
               {
                 "entity": 515,
+                "children": []
+              },
+              {
+                "entity": 514,
+                "children": []
+              },
+              {
+                "entity": 516,
+                "children": []
+              },
+              {
+                "entity": 517,
                 "children": []
               }
             ]
@@ -1521,7 +1706,18 @@
         "513": {
           "json": {}
         },
+        "514": {
+          "json": {
+            "porportionalScaling": true
+          }
+        },
         "515": {
+          "json": {}
+        },
+        "516": {
+          "json": {}
+        },
+        "517": {
           "json": {}
         }
       }

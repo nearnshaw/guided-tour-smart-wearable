@@ -1,5 +1,5 @@
 {
-	"id": "3aa78dd3-5b87-47dc-a537-bc684d962b4c",
+	"id": "8fc2fc31-f49a-4653-bdde-f6da3709506f",
 	"data": {
 		"replaces": [],
 		"hides": [],
@@ -25,7 +25,7 @@
 		],
 		"category": "eyewear"
 	},
-	"name": "Guided Tour Glasses",
-	"description": "A pair of glasses that allow you to see the guided tour.",
+	"name": "Guided Tour CONES",
+	"description": "Draw cones to follow the tour's path.",
 	"rarity": "uncommon"
 }
